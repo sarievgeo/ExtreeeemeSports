@@ -16,11 +16,11 @@ namespace CalculatorEX.App
                 { 'C', 100 }, { 'D', 500 }, { 'M', 1000 }
             };
 
-            char digit = str[str.Length - 1];
+            var digit = str[str.Length - 1];
 
-            int res = digits[digit];
+            var res = digits[digit];
 
-            for (int i = str.Length - 2; i >= 0; i--)
+            for (varu i = str.Length - 2; i >= 0; i--)
             {
                 if (digits[digit] > digits[str[i]])
                 {
