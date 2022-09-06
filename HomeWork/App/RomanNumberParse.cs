@@ -20,7 +20,7 @@ namespace CalculatorEX.App
 
             var res = digits[digit];
 
-            for (varu i = str.Length - 2; i >= 0; i--)
+            for (var i = str.Length - 2; i >= 0; i--)
             {
                 if (digits[digit] > digits[str[i]])
                 {
