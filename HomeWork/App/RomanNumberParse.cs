@@ -10,6 +10,14 @@ namespace CalculatorEX.App
     {
         public static int Parse(String str)
         {
+            
+            // validation input data
+            if (str == null)
+                throw new ArgumentNullException();
+        
+            if (str == string.Empty)
+                throw new ArgumentException("Empty string not allowed");
+            
             var digits = new Dictionary<char, int>()
             {
                 { 'I', 1 }, { 'V', 5 }, { 'X', 10 }, { 'L', 50 },
