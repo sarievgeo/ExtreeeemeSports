@@ -28,6 +28,32 @@ namespace TestProject
             Assert.AreEqual(RomanNumber.Parse("LV"), 55);
             Assert.AreEqual(RomanNumber.Parse("XL"), 40);
         }
+        [TestMethod]
+        public void RomanNumberParse3MoreDigits()
+        {
+            Assert.AreEqual(30, RomanNumber.Parse("XXX"));
+            Assert.AreEqual(401, RomanNumber.Parse("CDI"));
+            Assert.AreEqual(1999, RomanNumber.Parse("MCMXCIX"));
+        }
+
+        [TestMethod]
+        public void RomeWhiske()
+        {
+            var exc = Assert.ThrowsException<ArgumentException>(() => { RomanNumber.Parse("XXA"); });
+            var exp = new ArgumentException("Invalid char A");
+            Assert.AreEqual(exp.Message, exc.Message);
+
+            var exc_1 = Assert.ThrowsException<ArgumentException>(() => { RomanNumber.Parse("X X"); });
+            var exp_1 = new ArgumentException("Invalid space");
+            Assert.AreEqual(exp.Message, exc.Message);
+
+        }
+        [TestMethod]
+        public void RomanNumberSpace()
+        {
+            Assert.ThrowsException<Exception>(() => RomanNumber.Parse(""));
+            Assert.ThrowsException<ArgumentNullException>(() => RomanNumber.Parse(null!));
+        }
         
         [TestMethod]
         public void RomanNumberParseN()
