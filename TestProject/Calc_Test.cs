@@ -28,5 +28,22 @@ namespace TestProject
             Assert.AreEqual(RomanNumber.Parse("LV"), 55);
             Assert.AreEqual(RomanNumber.Parse("XL"), 40);
         }
+        
+        [TestMethod]
+        public void RomanNumberParseN()
+        {
+            Assert.AreEqual("N among us", 
+                Assert.ThrowsException<ArgumentException>(() => RomanNumber.Parse("XN")).Message
+            );
+            Assert.AreEqual("N among us", 
+                Assert.ThrowsException<ArgumentException>(() => RomanNumber.Parse("XNX")).Message
+            );
+            Assert.AreEqual("N among us", 
+                Assert.ThrowsException<ArgumentException>(() => RomanNumber.Parse("NVII")).Message
+            );
+            Assert.AreEqual("N among us", 
+                Assert.ThrowsException<ArgumentException>(() => RomanNumber.Parse("NN")).Message
+            );
+        }
     }
 }
