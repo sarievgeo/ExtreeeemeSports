@@ -11,6 +11,7 @@ namespace HomeWork.App
         public void Run()
         {
             Console.WriteLine("Hell");
+            Console.WriteLine("Error");
             Console.WriteLine("Carrot");
         }
     }
