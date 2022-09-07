@@ -54,7 +54,13 @@ namespace TestProject
             Assert.ThrowsException<Exception>(() => RomanNumber.Parse(""));
             Assert.ThrowsException<ArgumentNullException>(() => RomanNumber.Parse(null!));
         }
-        
+
+        [TestMethod]
+        public void ParseN()
+        {
+            Assert.AreEqual(RomanNumber.Parse("N"), 0);
+        }
+
         [TestMethod]
         public void RomanNumberParseN()
         {
