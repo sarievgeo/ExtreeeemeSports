@@ -11,6 +11,12 @@ namespace CalculatorEX.App
         public static int Parse(String str)
         {
             
+            var digits = new Dictionary<char, int>()
+            {
+                { 'I', 1 }, { 'V', 5 }, { 'X', 10 }, { 'L', 50 },
+                { 'C', 100 }, { 'D', 500 }, { 'M', 1000 }
+            };
+            
             // validation input data
             if (str == null)
                 throw new ArgumentNullException();
@@ -18,11 +24,11 @@ namespace CalculatorEX.App
             if (str == string.Empty)
                 throw new ArgumentException("Empty string not allowed");
             
-            var digits = new Dictionary<char, int>()
+            foreach (var inputSymbol in str)
             {
-                { 'I', 1 }, { 'V', 5 }, { 'X', 10 }, { 'L', 50 },
-                { 'C', 100 }, { 'D', 500 }, { 'M', 1000 }
-            };
+                if (!digits.ContainsKey(inputSymbol))
+                    throw new ArgumentException($"{inputSymbol} among us");
+            }
 
             var digit = str[str.Length - 1];
 
