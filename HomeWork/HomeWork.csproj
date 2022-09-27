@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="App\Calc_Engine.cs" />
+    <Compile Remove="App\User_Interface.cs" />
+  </ItemGroup>
+
 </Project>
